@@ -28,7 +28,7 @@ import {
 
   @include breakpoint(v-mobile) {
     padding: 1rem;
-    background-color: $white;
+    background-color: var(--color-white);
   }
 
   > * {

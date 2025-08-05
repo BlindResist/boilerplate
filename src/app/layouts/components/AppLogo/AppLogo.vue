@@ -25,10 +25,9 @@ const goTo: RouteLocationRaw = {
   text-decoration: none;
   border-radius: 50%;
   background-size: 70%;
-  background-color: $white;
+  background-color: var(--color-white);
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('@/app/assets/images/logo.svg');
   @include box-shadow-main;
   cursor: pointer;
 

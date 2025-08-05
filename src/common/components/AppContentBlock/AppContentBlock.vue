@@ -79,7 +79,7 @@ const hasInfo = computed<boolean>(() => {
     width: 40%;
     min-height: 10rem;
     flex-shrink: 0;
-    border: 1px solid $middle-grey;
+    border: 1px solid var(--color-secondary-3);
   }
 
   &__image {

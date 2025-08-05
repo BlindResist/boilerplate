@@ -1,16 +1,16 @@
 export type AppListTags = 'ul' | 'ol';
 
-export interface AppListItemProps {
-  tag?: AppListTags;
-  noMarkers?: boolean;
-}
-
 export interface AppListItemType {
   id: string;
   label: string;
 }
 
-export interface AppListProps
-  extends AppListItemProps {
+export interface AppListProps {
+  tag?: AppListTags;
+  noMarkers?: boolean;
   items?: AppListItemType[];
+}
+
+export interface AppListSlots {
+  [key: string]: [];
 }

@@ -32,14 +32,14 @@ html {
 }
 
 ::selection {
-  color: $white;
-  background: $black;
+  color: var(--color-white);
+  background: var(--color-black);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  color: $white;
-  background: $black;
+  color: var(--color-white);
+  background: var(--color-black);
   text-shadow: none;
 }
 
@@ -49,10 +49,10 @@ body {
   height: 100vh;
   min-width: 20rem;
   width: 100%;
-  color: $black;
+  color: var(--color-black);
   font-weight: 400;
   font-family: 'jb', Arial, Helvetica, sans-serif;
-  background-color: $white;
+  background-color: var(--color-white);
 }
 
 h1,
@@ -65,7 +65,7 @@ h6 {
 }
 
 a {
-  color: $black;
+  color: var(--color-black);
   text-decoration: none;
 
   &:visited,

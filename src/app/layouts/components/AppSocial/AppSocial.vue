@@ -50,7 +50,7 @@ const SOCIAL = [
     }
 
     &:hover {
-      color: $red;
+      color: var(--color-primary);
     }
   }
 }
