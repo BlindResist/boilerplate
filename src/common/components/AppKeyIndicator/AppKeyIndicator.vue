@@ -51,20 +51,20 @@ const hasValue = computed<boolean>(() => {
 <style lang="scss">
 .app-key-indicator {
   padding: 1.5rem;
-  background-color: $lite-grey;
+  background-color: var(--color-secondary-2);
 
   &__name {
     display: block;
     font-size: 1rem;
     font-weight: 700;
-    color: $dark-grey;
+    color: var(--color-secondary);
   }
 
   &__value {
     display: block;
     margin-top: 1.25rem;
     font-size: .875rem;
-    color: rgba($dark-grey, .8);
+    color: rgba(var(--color-secondary), .8);
   }
 }
 </style>

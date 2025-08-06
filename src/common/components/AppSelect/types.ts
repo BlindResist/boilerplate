@@ -1,0 +1,19 @@
+export interface AppSelectProps {
+  multiple?: boolean;
+  disabled?: boolean;
+  required?: boolean;
+  errorText?: string;
+  placeholder?: string;
+  options?: AppSelectOption[];
+}
+
+export interface AppSelectOption {
+  id: string;
+  text: string;
+  selected: boolean;
+  disabled: boolean;
+}
+
+export interface AppSelectSlots {
+  [key: string]: [value: string];
+}

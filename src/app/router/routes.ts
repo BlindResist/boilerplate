@@ -10,4 +10,12 @@ export const routes: RouteRecordRaw[] = [
       title: 'Home',
     },
   },
+  {
+    path: '/demo',
+    name: RouteNames.Demo,
+    component: () => import('@/pages/demo.vue'),
+    meta: {
+      title: 'Demo',
+    },
+  },
 ];

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
 import type {
   AppTitleProps,
   AppTitleSlots,
 } from './types';
+import type { HTMLElementClass } from '@/common/types';
 
 const props = withDefaults(defineProps<AppTitleProps>(), {
   text: '',
@@ -14,21 +16,25 @@ const props = withDefaults(defineProps<AppTitleProps>(), {
 });
 
 defineSlots<AppTitleSlots>();
+
+const elementClass = computed<HTMLElementClass>(() => {
+  return [
+    `app-title--${props.tag}`,
+    `app-title--${props.weight}`,
+    {
+      'app-title--comment': props.comment,
+      'app-title--bordered': props.bordered,
+      'app-title--uppercase': props.uppercase,
+    },
+  ];
+});
 </script>
 
 <template>
   <component
     :is="props.tag"
     class="app-title"
-    :class="[
-      `app-title--${props.tag}`,
-      `app-title--${props.weight}`,
-      {
-        'app-title--comment': props.comment,
-        'app-title--bordered': props.bordered,
-        'app-title--uppercase': props.uppercase,
-      },
-    ]"
+    :class="elementClass"
   >
     <slot>
       {{ props.text }}
@@ -39,7 +45,7 @@ defineSlots<AppTitleSlots>();
 <style lang="scss">
 .app-title {
   line-height: 1.25;
-  color: $dark-grey;
+  color: var(--color-secondary);
   user-select: none;
 
   &--comment {
@@ -52,13 +58,13 @@ defineSlots<AppTitleSlots>();
       top: 0;
       left: 0;
       z-index: 1;
-      color: $middle-grey;
+      color: var(--color-secondary-3);
     }
   }
 
   &--bordered {
     padding-bottom: 1rem;
-    border-bottom: 3px solid $lite-grey;
+    border-bottom: 3px solid var(--color-secondary-2);
   }
 
   &--uppercase {

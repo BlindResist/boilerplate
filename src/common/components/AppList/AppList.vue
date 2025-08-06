@@ -3,6 +3,7 @@ import { AppListItem } from './components';
 import type {
   AppListItemType,
   AppListProps,
+  AppListSlots,
 } from './types';
 import { slotName } from '@/common/helpers';
 
@@ -11,6 +12,8 @@ const props = withDefaults(defineProps<AppListProps>(), {
   items: () => [],
   noMarkers: false,
 });
+
+defineSlots<AppListSlots>();
 </script>
 
 <template>
@@ -18,20 +21,15 @@ const props = withDefaults(defineProps<AppListProps>(), {
     :is="tag"
     class="list"
   >
-    <slot
+    <AppListItem
+      v-for="item in items"
+      :key="item.id"
       :tag="props.tag"
       :no-markers="props.noMarkers"
     >
-      <AppListItem
-        v-for="item in items"
-        :key="item.id"
-        :tag="props.tag"
-        :no-markers="props.noMarkers"
-      >
-        <slot :name="slotName<AppListItemType['id']>('list-item', item.id)">
-          {{ item.label }}
-        </slot>
-      </AppListItem>
-    </slot>
+      <slot :name="slotName<AppListItemType['id']>('list-item', item.id)">
+        {{ item.label }}
+      </slot>
+    </AppListItem>
   </Component>
 </template>

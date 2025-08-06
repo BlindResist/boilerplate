@@ -77,7 +77,7 @@ function getRandomInt(min: number, max: number): number {
   &__path {
     opacity: 0;
     fill: none;
-    stroke: rgba($black, .5);
+    stroke: rgba(var(--color-black), .5);
     stroke-width: 1px;
     stroke-dasharray: 2200px;
     stroke-dashoffset: 2200px;

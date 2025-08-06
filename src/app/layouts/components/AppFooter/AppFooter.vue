@@ -54,7 +54,7 @@ const currentYear = new Date().getFullYear();
     &:hover {
 
       .love {
-        color: $red;
+        color: var(--color-primary);
       }
     }
   }

@@ -50,7 +50,7 @@ function goTo(name: RouteNames): RouteLocationRaw {
     text-decoration: none;
     border-radius: 50%;
     background-size: 44%;
-    background-color: $white;
+    background-color: var(--color-white);
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -58,7 +58,7 @@ function goTo(name: RouteNames): RouteLocationRaw {
     &:hover {
 
       span {
-        background-color: $red;
+        background-color: var(--color-primary);
       }
     }
 
@@ -71,15 +71,15 @@ function goTo(name: RouteNames): RouteLocationRaw {
       position: absolute;
       left: 0;
       border-radius: 9px;
-      background-color: $black;
+      background-color: var(--color-black);
       transform: rotate(0deg);
       transition:
-        background-color $transition,
-        bottom .3s $transition,
-        width .3s $transition,
-        transform $transition,
-        top .3s $transition,
-        opacity $transition;
+        background-color var(--transition),
+        bottom .3s var(--transition),
+        width .3s var(--transition),
+        transform var(--transition),
+        top .3s var(--transition),
+        opacity var(--transition);
 
       &:nth-child(1) {
         top: 0;
@@ -130,13 +130,13 @@ function goTo(name: RouteNames): RouteLocationRaw {
   &__link {
     display: block;
     position: relative;
-    color: $black;
+    color: var(--color-black);
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.5rem;
     white-space: nowrap;
-    text-shadow: 1px 1px 1px $white;
-    transition: opacity $transition;
+    text-shadow: 1px 1px 1px var(--color-white);
+    transition: opacity var(--transition);
 
     &:after {
       content: '';
@@ -147,8 +147,8 @@ function goTo(name: RouteNames): RouteLocationRaw {
       position: absolute;
       left: 0;
       top: 70%;
-      background-color: $red;
-      transition: top $transition, opacity $transition;
+      background-color: var(--color-primary);
+      transition: top var(--transition), opacity var(--transition);
     }
 
     &:hover,

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
 import type {
   AppLinkEmits,
   AppLinkProps,
   AppLinkSlots,
 } from './types';
+import type { HTMLElementClass } from '@/common/types';
 
 const props = withDefaults(defineProps<AppLinkProps>(), {
   url: '#',
@@ -19,6 +21,16 @@ const emit = defineEmits<AppLinkEmits>();
 
 defineSlots<AppLinkSlots>();
 
+const elementClass = computed<HTMLElementClass>(() => {
+  return [
+    `app-link--${props.theme}`,
+    `app-link--hover-${props.hover}`,
+    {
+      'app-link--underline': props.underline,
+    },
+  ];
+});
+
 function onClick(event: Event): void {
   if (props.prevent) {
     event.preventDefault();
@@ -32,13 +44,7 @@ function onClick(event: Event): void {
   <a
     :href="props.url"
     class="app-link"
-    :class="[
-      `app-link--${props.theme}`,
-      `app-link--hover-${props.hover}`,
-      {
-        'app-link--underline': props.underline,
-      },
-    ]"
+    :class="elementClass"
     :target="props.target"
     @click="onClick"
   >
@@ -50,8 +56,8 @@ function onClick(event: Event): void {
 
 <style lang="scss">
 .app-link {
-  color: $black;
-  transition: color $transition;
+  color: var(--color-black);
+  transition: color var(--transition);
 
   &:visited,
   &:focus,
@@ -62,7 +68,7 @@ function onClick(event: Event): void {
   &--hover-red {
 
     &:hover {
-      color: $red;
+      color: var(--color-primary);
     }
   }
 
@@ -71,11 +77,11 @@ function onClick(event: Event): void {
   }
 
   &--primary {
-    color: $red;
+    color: var(--color-primary);
   }
 
   &--secondary {
-    color: $middle-grey;
+    color: var(--color-secondary-3);
   }
 }
 </style>

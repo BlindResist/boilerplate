@@ -1,10 +1,15 @@
 <script lang="ts" setup>
-import type { AppListItemProps } from '../../types';
+import type {
+  AppListItemProps,
+  AppListItemSlots,
+} from './types';
 
 const props = withDefaults(defineProps<AppListItemProps>(), {
   tag: 'ul',
   noMarkers: false,
 });
+
+defineSlots<AppListItemSlots>();
 </script>
 
 <template>
@@ -40,7 +45,7 @@ const props = withDefaults(defineProps<AppListItemProps>(), {
       left: 0;
       z-index: 1;
       font-weight: 700;
-      color: $middle-grey;
+      color: var(--color-secondary-3);
     }
   }
 
@@ -52,7 +57,7 @@ const props = withDefaults(defineProps<AppListItemProps>(), {
       width: 1.25rem;
       text-align: left;
       font-weight: 500;
-      color: $middle-grey;
+      color: var(--color-secondary-3);
     }
   }
 
