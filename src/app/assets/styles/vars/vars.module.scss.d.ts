@@ -1,6 +1,6 @@
-export type Styles = {
-  '$transition': string;
-};
+export interface Styles {
+  $transition: string;
+}
 
 export type ClassNames = keyof Styles;
 

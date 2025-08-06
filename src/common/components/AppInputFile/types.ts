@@ -1,0 +1,22 @@
+export type AppInputFileType = 'base64' | 'file';
+
+export type AppInputFileAcceptType = 'image' | 'json';
+
+export interface AppInputFileProps {
+  multiple?: boolean;
+  acceptSize?: number;
+  buttonText?: string;
+  description?: string;
+  type?: AppInputFileType;
+  acceptType?: AppInputFileAcceptType;
+}
+
+export interface AppInputFileEmits {
+  'update:file': [value: File];
+  'update:base64': [value: string];
+}
+
+export interface AppInputFileSlots {
+  file: [value: File];
+  error: [value: string];
+}

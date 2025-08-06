@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
 import type {
   AppTitleProps,
   AppTitleSlots,
 } from './types';
-import { computed } from 'vue';
 import type { HTMLElementClass } from '@/common/types';
 
 const props = withDefaults(defineProps<AppTitleProps>(), {

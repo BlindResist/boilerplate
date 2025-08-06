@@ -5,4 +5,13 @@ interface Navigation {
   routeName: RouteNames;
 }
 
-export const navigation: Navigation[] = [];
+export const navigation: Navigation[] = [
+  {
+    label: 'home',
+    routeName: RouteNames.Home,
+  },
+  {
+    label: 'demo',
+    routeName: RouteNames.Demo,
+  },
+];

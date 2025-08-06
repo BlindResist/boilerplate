@@ -17,6 +17,7 @@ const route = useRoute();
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
+  overflow: hidden;
 
   @include breakpoint(v-mobile) {
     padding-top: 6rem;

@@ -13,12 +13,13 @@
   align-items: center;
   justify-content: flex-start;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   overflow: auto;
-  padding: 10rem 0 4rem;
+  padding: 4rem 0;
 
   &__inner {
     display: flex;
+    flex-flow: column nowrap;
     width: 960px;
     height: 100%;
     padding: 0 1rem;
