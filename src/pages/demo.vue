@@ -104,7 +104,6 @@ const headers = ref<AppTableHeader<TableData>[]>([
     id: '1',
     name: 'one',
     label: 'Column one',
-    width: '30',
   },
   {
     id: '2',

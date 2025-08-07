@@ -13,22 +13,19 @@ import type { HTMLElementClass } from '@/common/types';
 const props = withDefaults(defineProps<AppTableProps<T>>(), {
   rows: () => [],
   headers: () => [],
-  showHeader: true,
-  padding: false,
+  hideHeader: false,
 });
 
 defineSlots<AppTableSlots<T>>();
 
 const elementClass = computed<HTMLElementClass>(() => {
-  return {
-    'app-table--padding': props.padding,
-  };
+  return {};
 });
 
 function cellWidth(cell: AppTableHeader<T>): StyleValue {
   return cell.width
     ? {
-        width: `${cell.width}%`,
+        width: `${cell.width}`,
       }
     : {};
 }
@@ -41,7 +38,7 @@ function cellWidth(cell: AppTableHeader<T>): StyleValue {
   >
     <table class="app-table__content">
       <thead
-        v-if="props.showHeader"
+        v-if="!props.hideHeader"
         class="app-table__thead"
       >
         <tr class="app-table__tr">
@@ -96,6 +93,10 @@ function cellWidth(cell: AppTableHeader<T>): StyleValue {
     border-collapse: collapse;
   }
 
+  &__thead {
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
   &__th,
   &__td {
     padding: .5rem;
@@ -107,16 +108,6 @@ function cellWidth(cell: AppTableHeader<T>): StyleValue {
 
   &__td {
     vertical-align: top;
-  }
-
-  &--padding {
-
-    #{$parent}__tr:not(:first-of-type) {
-
-      #{$parent}__td {
-        padding: 8px 0 4px;
-      }
-    }
   }
 }
 </style>
