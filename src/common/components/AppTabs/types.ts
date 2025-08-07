@@ -7,5 +7,5 @@ export interface AppTabsItem<T extends string = string> {
 }
 
 export interface AppTabsSlots {
-  [key: string]: [value: string];
+  [key: `tab-${AppTabsItem['id']}`]: [value: string];
 }

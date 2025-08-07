@@ -17,5 +17,5 @@ export interface AppRadioOption {
 }
 
 export interface AppRadioSlots {
-  [key: string]: [value: string];
+  [key: `radio-${AppRadioOption['id']}`]: [value: string];
 }

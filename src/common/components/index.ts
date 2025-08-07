@@ -4,6 +4,7 @@ export * from './AppList';
 export * from './AppRadio';
 export * from './AppInput';
 export * from './AppTitle';
+export * from './AppTable';
 export * from './AppSelect';
 export * from './AppButton';
 export * from './AppNoData';

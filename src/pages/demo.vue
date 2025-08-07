@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {
+  computed,
+  ref,
+} from 'vue';
 import {
   AppAccordion,
   AppAccordionItem,
@@ -17,6 +20,9 @@ import {
   AppSelect,
   type AppSelectOption,
   AppSpinner,
+  AppTable,
+  type AppTableHeader,
+  type AppTableRow,
   AppTabs,
   type AppTabsItem,
   AppTextarea,
@@ -25,6 +31,13 @@ import {
   AppTooltip,
 } from '@/common';
 import { AppPage } from '@/app/layouts';
+
+interface TableData {
+  id: string;
+  one: string;
+  two: string;
+  three: string;
+}
 
 const tags = ref<AppTitleTags[]>([
   'h1',
@@ -86,12 +99,54 @@ const tabs = ref<AppTabsItem[]>([
   },
 ]);
 
+const headers = ref<AppTableHeader<TableData>[]>([
+  {
+    id: '1',
+    name: 'one',
+    label: 'Column one',
+  },
+  {
+    id: '2',
+    name: 'two',
+    label: 'Column two',
+  },
+  {
+    id: '3',
+    name: 'three',
+    label: 'Column three',
+  },
+]);
+
 const radio = ref<string>('');
 const select = ref<string>('');
 const textarea = ref<string>('');
 const spinner = ref<boolean>(true);
 const inputValue = ref<string>('');
 const checkbox = ref<boolean>(false);
+
+const rows = computed<AppTableRow<TableData>[]>(() => {
+  return [
+    {
+      id: '1',
+      one: 'one 1',
+      two: 'two 1',
+      three: 'three 1',
+    },
+    {
+      id: '2',
+      one: 'one 2',
+      two: 'two 2',
+      three: 'three 2',
+    },
+  ].map((item) => {
+    return {
+      id: item.id,
+      data: {
+        ...item,
+      },
+    };
+  });
+});
 </script>
 
 <template>
@@ -483,6 +538,24 @@ const checkbox = ref<boolean>(false);
               <AppTooltip>
                 tooltip
               </AppTooltip>
+            </div>
+          </div>
+        </div>
+
+        <!--    AppTable    -->
+        <div class="col-default-12">
+          <AppDivider />
+          <AppTitle
+            tag="h4"
+            text="AppTable"
+            class="margin-bottom--s"
+          />
+          <div class="row">
+            <div class="col-default-6">
+              <AppTable
+                :headers="headers"
+                :rows="rows"
+              />
             </div>
           </div>
         </div>

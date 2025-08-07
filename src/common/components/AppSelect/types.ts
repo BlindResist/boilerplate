@@ -15,5 +15,5 @@ export interface AppSelectOption {
 }
 
 export interface AppSelectSlots {
-  [key: string]: [value: string];
+  [key: `checkbox-${AppSelectOption['id']}`]: [value: string];
 }

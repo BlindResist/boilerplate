@@ -12,5 +12,5 @@ export interface AppListProps {
 }
 
 export interface AppListSlots {
-  [key: string]: [];
+  [key: `list-item-${AppListItemType['id']}`]: [];
 }

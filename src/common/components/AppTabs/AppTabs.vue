@@ -3,7 +3,6 @@ import type {
   AppTabsItem,
   AppTabsSlots,
 } from './types';
-import { slotName } from '@/common/helpers';
 import type { HTMLElementClass } from '@/common/types';
 
 defineSlots<AppTabsSlots>();
@@ -40,7 +39,7 @@ function toggleItem(id: AppTabsItem['id']): void {
         @click="toggleItem(item.id)"
       >
         <slot
-          :name="slotName('tab', item.id)"
+          :name="`tab-${String(item.id)}`"
           :text="item.label"
         >
           {{ item.label }}
