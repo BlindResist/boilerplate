@@ -108,6 +108,7 @@ function appearAnimationLeave(el: Element, done: Function): void {
   &--overlay {
     width: 100%;
     height: 100%;
+    position: absolute;
     background-color: rgba(var(--color-white), .7);
     user-select: none;
   }

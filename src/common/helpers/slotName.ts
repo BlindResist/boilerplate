@@ -1,3 +1,3 @@
-export function slotName<T>(prefix: string = 'slot', body: T): string {
-  return `${prefix}-${body}`.toLowerCase();
+export function slotName<PREFIX extends string, BODY extends string>(prefix: PREFIX, body: BODY): `${PREFIX}-${BODY}` {
+  return `${prefix}-${body}`.toLowerCase() as `${PREFIX}-${BODY}`;
 }

@@ -6,7 +6,6 @@ import type {
   AppRadioProps,
   AppRadioSlots,
 } from './types';
-import { slotName } from '@/common/helpers';
 
 const props = withDefaults(defineProps<AppRadioProps>(), {
   required: false,
@@ -77,7 +76,7 @@ function validate(): void {
           class="app-radio__text"
         >
           <slot
-            :name="slotName('radio', item.id)"
+            :name="`radio-${String(item.id)}`"
             :text="item.text"
           >
             {{ item.text }}

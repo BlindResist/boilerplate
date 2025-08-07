@@ -10,7 +10,6 @@ import type {
   AppSelectProps,
   AppSelectSlots,
 } from './types';
-import { slotName } from '@/common/helpers';
 import type { HTMLElementClass } from '@/common/types';
 
 const props = withDefaults(defineProps<AppSelectProps>(), {
@@ -126,7 +125,7 @@ watch(props.options, (value) => {
           @click="changeSelected(item)"
         >
           <slot
-            :name="slotName('checkbox', item.id)"
+            :name="`checkbox-${String(item.id)}`"
             :text="item.text"
           >
             {{ item.text }}
