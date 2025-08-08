@@ -15,6 +15,7 @@ import {
   AppKeyIndicator,
   AppLink,
   AppList,
+  AppModal,
   AppRadio,
   type AppRadioOption,
   AppSanitizedHtml,
@@ -121,6 +122,7 @@ const headers = ref<AppTableHeader<TableData>[]>([
 const radio = ref<string>('');
 const select = ref<string>('');
 const textarea = ref<string>('');
+const modal = ref<boolean>(false);
 const spinner = ref<boolean>(true);
 const inputValue = ref<string>('');
 const checkbox = ref<boolean>(false);
@@ -584,6 +586,27 @@ const rows = computed<AppTableRow<TableData>[]>(() => {
               <AppSanitizedHtml
                 content="<b>Test bold text as string</b>"
               />
+            </div>
+          </div>
+        </div>
+
+        <!--    AppModal    -->
+        <div class="col-default-12">
+          <AppDivider />
+          <AppTitle
+            tag="h4"
+            text="AppModal"
+            class="margin-bottom--s"
+          />
+          <div class="row">
+            <div class="col-default-4">
+              <AppButton
+                text="Open modal!"
+                @click="modal = !modal"
+              />
+              <AppModal v-model:visible="modal">
+                Modal content!
+              </AppModal>
             </div>
           </div>
         </div>
