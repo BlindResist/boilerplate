@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export type AppInputFileType = 'base64' | 'file';
 
 export type AppInputFileAcceptType = 'image' | 'json';
@@ -17,6 +19,10 @@ export interface AppInputFileEmits {
 }
 
 export interface AppInputFileSlots {
-  file: [value: File];
-  error: [value: string];
+  file?: (scope: {
+    file?: File;
+  }) => VNode[];
+  error?: (scope: {
+    error: string;
+  }) => VNode[];
 }

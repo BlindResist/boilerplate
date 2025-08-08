@@ -1,3 +1,4 @@
+import type { VNode } from 'vue';
 import type { RouteNames } from '@/app/router/route-names';
 
 export type AppButtonSize = 's' | 'm' | 'l';
@@ -29,7 +30,7 @@ export interface AppButtonEmits {
 }
 
 export interface AppButtonSlots {
-  default: [];
-  prepend: [];
-  append: [];
+  default?: () => VNode[];
+  prepend?: () => VNode[];
+  append?: () => VNode[];
 }

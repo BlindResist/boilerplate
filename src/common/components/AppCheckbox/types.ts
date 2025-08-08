@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppCheckboxProps {
   name?: string;
   text?: string;
@@ -5,5 +7,5 @@ export interface AppCheckboxProps {
 }
 
 export interface AppCheckboxSlots {
-  default: [];
+  default?: () => VNode[];
 }

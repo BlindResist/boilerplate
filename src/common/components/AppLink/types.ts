@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export type AppLinkHover = 'red';
 
 export type AppLinkTarget = '_blank' | '_self';
@@ -19,5 +21,5 @@ export interface AppLinkEmits {
 }
 
 export interface AppLinkSlots {
-  default: [];
+  default?: () => VNode[];
 }

@@ -12,11 +12,11 @@ const props = defineProps<AppContentBlockProps>();
 const slots = defineSlots<AppContentBlockSlots>();
 
 const hasImage = computed<boolean>(() => {
-  return !!slots.image || props.image;
+  return !!slots.image! || props.image;
 });
 
 const hasInfo = computed<boolean>(() => {
-  return (!!slots.title || props.title) || (!!slots.description || props.description);
+  return (!!slots.title! || props.title) || (!!slots.description! || props.description);
 });
 </script>
 

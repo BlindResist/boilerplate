@@ -18,3 +18,4 @@ export * from './AppAccordion';
 export * from './AppDatePicker';
 export * from './AppContentBlock';
 export * from './AppKeyIndicator';
+export * from './AppSanitizedHtml';

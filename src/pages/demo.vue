@@ -17,6 +17,7 @@ import {
   AppList,
   AppRadio,
   type AppRadioOption,
+  AppSanitizedHtml,
   AppSelect,
   type AppSelectOption,
   AppSpinner,
@@ -555,6 +556,33 @@ const rows = computed<AppTableRow<TableData>[]>(() => {
               <AppTable
                 :headers="headers"
                 :rows="rows"
+              />
+            </div>
+            <div class="col-default-6">
+              <AppTable
+                :headers="headers"
+                :rows="rows"
+              >
+                <template #td-one="{ data }">
+                  {{ data.one }}
+                </template>
+              </AppTable>
+            </div>
+          </div>
+        </div>
+
+        <!--    AppSanitizeHtml    -->
+        <div class="col-default-12">
+          <AppDivider />
+          <AppTitle
+            tag="h4"
+            text="AppSanitizeHtml"
+            class="margin-bottom--s"
+          />
+          <div class="row">
+            <div class="col-default-4">
+              <AppSanitizedHtml
+                content="<b>Test bold text as string</b>"
               />
             </div>
           </div>

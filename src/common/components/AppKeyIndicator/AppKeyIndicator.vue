@@ -11,11 +11,11 @@ const props = defineProps<AppKeyIndicatorProps>();
 const slots = defineSlots<AppKeyIndicatorSlots>();
 
 const hasName = computed<boolean>(() => {
-  return !!slots.label || props.label;
+  return !!slots.label! || props.label;
 });
 
 const hasValue = computed<boolean>(() => {
-  return !!slots.value || props.value;
+  return !!slots.value! || props.value;
 });
 </script>
 

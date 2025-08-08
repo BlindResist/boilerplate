@@ -25,7 +25,10 @@ defineSlots<AppListSlots>();
       :tag="props.tag"
       :no-markers="props.noMarkers"
     >
-      <slot :name="`list-item-${String(item.id)}`">
+      <slot
+        :name="`list-item-${String(item.id)}`"
+        :data="item"
+      >
         {{ item.label }}
       </slot>
     </AppListItem>

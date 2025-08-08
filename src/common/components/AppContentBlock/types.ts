@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppContentBlockProps {
   title?: string;
   image?: string;
@@ -5,7 +7,7 @@ export interface AppContentBlockProps {
 }
 
 export interface AppContentBlockSlots {
-  image: [image: AppContentBlockProps['image']];
-  title: [title: AppContentBlockProps['title']];
-  description: [description: AppContentBlockProps['description']];
+  image?: (scope: { image: AppContentBlockProps['image'] }) => VNode[];
+  title?: (scope: { title: AppContentBlockProps['title'] }) => VNode[];
+  description?: (scope: { description: AppContentBlockProps['description'] }) => VNode[];
 }
