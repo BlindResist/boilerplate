@@ -1,4 +1,4 @@
-export type AppTableSlotPrefix = 'td' | 'th';
+import type { VNode } from 'vue';
 
 export type AppTableHeaderWidth = `${string}${'px' | '%'}`;
 
@@ -21,5 +21,10 @@ export interface AppTableProps<T> {
 }
 
 export interface AppTableSlots<T> {
-  [key: `${AppTableSlotPrefix}-${string}`]: [data: T | AppTableHeader<T>];
+  [key: `th-${string}`]: (scope: {
+    data: AppTableHeader<T>;
+  }) => VNode[];
+  [key: `td-${string}`]: (scope: {
+    data: T;
+  }) => VNode[];
 }

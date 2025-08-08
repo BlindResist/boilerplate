@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppInputProps {
   disabled?: boolean;
   required?: boolean;
@@ -14,5 +16,5 @@ export interface AppInputEmits {
 }
 
 export interface AppInputSlots {
-  error: [];
+  error?: () => VNode[];
 }

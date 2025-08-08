@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppAccordionSlots {
-  default: [];
+  default?: () => VNode[];
 }

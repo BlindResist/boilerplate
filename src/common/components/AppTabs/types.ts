@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppTabsItem<T extends string = string> {
   id: T;
   label?: string;
@@ -7,5 +9,5 @@ export interface AppTabsItem<T extends string = string> {
 }
 
 export interface AppTabsSlots {
-  [key: `tab-${AppTabsItem['id']}`]: [value: string];
+  [key: `tab-${AppTabsItem['id']}`]: (scope: { text?: string }) => VNode[];
 }

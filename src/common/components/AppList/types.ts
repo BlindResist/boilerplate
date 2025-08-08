@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export type AppListTags = 'ul' | 'ol';
 
 export interface AppListItemType {
@@ -12,5 +14,7 @@ export interface AppListProps {
 }
 
 export interface AppListSlots {
-  [key: `list-item-${AppListItemType['id']}`]: [];
+  [key: `list-item-${AppListItemType['id']}`]: (scope: {
+    data: AppListItemType;
+  }) => VNode[];
 }

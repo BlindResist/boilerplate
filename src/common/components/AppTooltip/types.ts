@@ -1,4 +1,5 @@
 import type { Props } from 'tippy.js';
+import type { VNode } from 'vue';
 
 export interface AppTooltipActions {
   close?: (() => void);
@@ -20,6 +21,6 @@ export type AppTooltipTippyProps = Pick<
 >;
 
 export interface AppTooltipSlots {
-  activator: [];
-  default: [value: Function];
+  activator?: () => VNode[];
+  default?: (scope: { close?: Function }) => VNode[];
 }

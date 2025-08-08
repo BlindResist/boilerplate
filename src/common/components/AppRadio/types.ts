@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppRadioProps {
   disabled?: boolean;
   required?: boolean;
@@ -17,5 +19,7 @@ export interface AppRadioOption {
 }
 
 export interface AppRadioSlots {
-  [key: `radio-${AppRadioOption['id']}`]: [value: string];
+  [key: `radio-${AppRadioOption['id']}`]: (scope: {
+    text: AppRadioOption['text'];
+  }) => VNode[];
 }

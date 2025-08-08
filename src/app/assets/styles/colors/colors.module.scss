@@ -1,5 +1,6 @@
 $white: #ffffff;
 $black: #212121;
+$black-50: rgba($black, 0.5);
 $primary: #ed174b;
 $primary-2: #c20f3b;
 $secondary: #2d2d2d;
@@ -9,6 +10,7 @@ $secondary-3: #E6E6E6;
 :export {
   white: $white;
   black: $black;
+  black-50: $black-50;
   primary: $primary;
   primary-2: $primary-2;
   secondary: $secondary;

@@ -1,3 +1,5 @@
+import type { VNode } from 'vue';
+
 export interface AppTextareaProps {
   resize?: boolean;
   disabled?: boolean;
@@ -12,5 +14,5 @@ export interface AppTextareaEmits {
 }
 
 export interface AppTextareaSlots {
-  error: [];
+  error?: () => VNode[];
 }
